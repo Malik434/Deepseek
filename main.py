@@ -5,7 +5,6 @@ from openai import OpenAI
 app = Flask(__name__)
 
 def clean_text(text):
-    """Remove unnecessary special characters while keeping meaningful punctuation."""
     text = text.strip()  
     text = re.sub(r"[^\w\s.,!?'-]", "", text)  
     text = re.sub(r"\s+", " ", text)  
@@ -14,7 +13,7 @@ def clean_text(text):
 def analyze_sentiment(text):
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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",
+        api_key="Your-API-Key",
     )
 
     cleaned_text = clean_text(text)  # Clean text before sending
